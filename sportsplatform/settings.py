@@ -51,6 +51,16 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "storefront2",
+        "HOST": "localhost",
+        "USER": "root",
+        "PASSWORD": "Rikimaru99$Bruno10!",
+    }
+}
+
 ROOT_URLCONF = "sportsplatform.urls"
 
 TEMPLATES = [
