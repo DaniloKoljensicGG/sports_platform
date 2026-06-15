@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 
@@ -16,6 +17,9 @@ class PlayerProfile(models.Model):
 
     GENDER_CHOICES = [(GENDER_MALE, "Male"), (GENDER_FEMALE, "Female")]
 
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="profile"
+    )
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     date_of_birth = models.DateField()
